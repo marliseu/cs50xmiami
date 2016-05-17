@@ -10,11 +10,22 @@ http://math2.org/math/geometry/circles.htm
 */
 
 // write your solution here...
-var radius = prompt("What is the radius?");
-var pi = 3.141592;
+var prompt = require('prompt');
 
-var circumference = 2 * pi * radius;
-console.log("The circumference is " + circumference);
+  prompt.start();
 
-var area = pi * (Math.pow(radius, 2));
-console.log("The area is " + area);
+  prompt.get(['radius'], function (err, result) {
+    var radius = result.radius;
+    var pi = 3.141592;
+
+    var circumference = 2 * pi * radius;
+    console.log("The circumference is " + circumference);
+
+    var area = pi * (Math.pow(radius, 2));
+    console.log("The area is " + area);
+  });
+
+  function onErr(err) {
+    console.log(err);
+    return 1;
+  }

@@ -14,14 +14,8 @@ Ever wonder how much a "lifetime supply" of your favorite snack is? Wonder no mo
 // write your solution here...
 var prompt = require('prompt');
 
-  //
-  // Start the prompt
-  //
   prompt.start();
 
-  //
-  // Get two properties from the user: username and email
-  //
   prompt.get(['yourAge', 'maxAge', 'eatenPerDay'], function (err, result) {
     var currentAge = result.yourAge;
     var maxAge = result.maxAge;
@@ -30,3 +24,8 @@ var prompt = require('prompt');
 
     console.log("You will need " + lifetime + " to last you until the ripe old age of " + maxAge);
   });
+
+  function onErr(err) {
+    console.log(err);
+    return 1;
+  }

@@ -12,8 +12,6 @@ Forgot how old someone is? Calculate it!
 // write your solution here...
 var prompt = require('prompt');
 
-
-
   prompt.start();
 
   prompt.get(['birthYear'], function (err, result) {

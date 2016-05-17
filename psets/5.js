@@ -31,3 +31,8 @@ var prompt = require('prompt');
     var dollars = result.dollars;
     console.log(drEvil(dollars));
   });
+
+  function onErr(err) {
+    console.log(err);
+    return 1;
+  }

@@ -10,12 +10,28 @@ Forgot how old someone is? Calculate it!
 */
 
 // write your solution here...
-var currentYear = new Date().getFullYear();
-var birthYear = prompt("What year were you born?");
-var ages = [];
-var age = currentYear - birthYear;
-ages.push(age);
-age = age - 1;
-ages.push(age);
+var prompt = require('prompt');
 
-console.log("They are either " + ages[1] + " or " + ages[0]);
+
+
+  prompt.start();
+
+  prompt.get(['birthYear'], function (err, result) {
+    if (err) { return onErr(err); }
+
+    var birthYear = result.birthYear;
+    var currentYear = new Date().getFullYear();
+
+    var ages = [];
+    var age = currentYear - birthYear;
+    ages.push(age);
+    age = age - 1;
+    ages.push(age);
+
+    console.log("They are either " + ages[1] + " or " + ages[0]);
+  });
+
+  function onErr(err) {
+    console.log(err);
+    return 1;
+  }

@@ -25,14 +25,8 @@ function drEvil(amount) {
 
 var prompt = require('prompt');
 
-  //
-  // Start the prompt
-  //
   prompt.start();
 
-  //
-  // Get two properties from the user: username and email
-  //
   prompt.get(['dollars'], function (err, result) {
     var dollars = result.dollars;
     console.log(drEvil(dollars));

@@ -14,4 +14,30 @@ Look up the JavaScript string reference to find methods which may be useful!
 
 function mixUp(a, b) {
   // write your solution here...
+  var ia = a[0];
+  var ib = b[0];
+  var newa = [];
+  var newb = [];
+  for (var i = 0, len = a.length; i < len; i++) {
+    if (i == 0) {
+      newa.push(ib);
+    }
+    else {
+      newa.push(a[i]);
+    }
+  }
+  for (var i = 0, len = b.length; i < len; i++) {
+    if (i == 0) {
+      newb.push(ia);
+    }
+    else {
+      newb.push(b[i]);
+    }
+  }
+  var string = newa.join("") + " " + newb.join("");
+  return string;
 }
+
+var word1 = prompt("Give me a word:");
+var word2 = prompt("Give me another word:");
+console.log(mixUp(word1, word2));

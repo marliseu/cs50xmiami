@@ -13,4 +13,23 @@ fixStart('babble'): 'ba**le'
 
 function fixStart(s) {
   // write your solution here...
+  var firstChar = s[0];
+  var fixed = [];
+  for (var i = 0, len = s.length; i < len; i++) {
+    if (i > 0) {
+      if (s[i] == firstChar) {
+        fixed.push("*");
+      }
+      else {
+        fixed.push(s[i]);
+      }
+    }
+    else {
+      fixed.push(s[i]);
+    }
+  }
+  return fixed.join("");
 }
+
+word = prompt("Give me a word.");
+console.log(fixStart(word));

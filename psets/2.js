@@ -12,9 +12,21 @@ Ever wonder how much a "lifetime supply" of your favorite snack is? Wonder no mo
 */
 
 // write your solution here...
-var currentAge = prompt("What's your age?");
-var maxAge = 89;
-var perDay = 3;
-var lifetime = (maxAge - currentAge) * 365 * perDay;
+var prompt = require('prompt');
 
-console.log("You will need " + lifetime + " to last you until the ripe old age of " + maxAge);
+  //
+  // Start the prompt
+  //
+  prompt.start();
+
+  //
+  // Get two properties from the user: username and email
+  //
+  prompt.get(['yourAge', 'maxAge', 'eatenPerDay'], function (err, result) {
+    var currentAge = result.yourAge;
+    var maxAge = result.maxAge;
+    var perDay = result.eatenPerDay;
+    var lifetime = (maxAge - currentAge) * 365 * perDay;
+
+    console.log("You will need " + lifetime + " to last you until the ripe old age of " + maxAge);
+  });

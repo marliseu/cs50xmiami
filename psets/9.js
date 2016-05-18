@@ -17,4 +17,31 @@ For example:
 
 function notBad(sentence) {
   // write your solution here...
+  var notIndex = sentence.search("not");
+  var badIndex = sentence.search("bad");
+
+  if (badIndex > notIndex) {
+    var beginning = sentence.slice(0, notIndex);
+    var end = sentence.slice((badIndex + 3), sentence.length);
+    var good = beginning + "good" + end;
+    console.log(good);
+  }
+  else {
+    console.log(sentence);
+  }
 }
+
+var prompt = require('prompt');
+
+  prompt.start();
+
+  prompt.get(['sentence'], function (err, result) {
+    // Code here
+    var sentence = result.sentence;
+    console.log(notBad(sentence));
+  });
+
+  function onErr(err) {
+    console.log(err);
+    return 1;
+  }

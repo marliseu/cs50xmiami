@@ -31,5 +31,16 @@ function fixStart(s) {
   return fixed.join("");
 }
 
-word = prompt("Give me a word.");
-console.log(fixStart(word));
+var prompt = require('prompt');
+
+  prompt.start();
+
+  prompt.get(['word'], function (err, result) {
+    var word = result.word;
+    console.log(fixStart(word));
+  });
+
+  function onErr(err) {
+    console.log(err);
+    return 1;
+  }

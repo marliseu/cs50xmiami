@@ -38,6 +38,17 @@ function mixUp(a, b) {
   return string;
 }
 
-var word1 = prompt("Give me a word:");
-var word2 = prompt("Give me another word:");
-console.log(mixUp(word1, word2));
+var prompt = require('prompt');
+
+  prompt.start();
+
+  prompt.get(['word1', 'word2'], function (err, result) {
+    var word1 = result.word1;
+    var word2 = result.word2;
+    console.log(mixUp(word1, word2));
+  });
+
+  function onErr(err) {
+    console.log(err);
+    return 1;
+  }

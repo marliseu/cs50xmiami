@@ -28,3 +28,40 @@ Write a function that will take one argument (a number) and perform the followin
 
 
 // write your solution here...
+function squareNumber(n) {
+  var squared = n * n;
+  console.log("The result of squaring the number " + n + " is " + squared);
+  return squared;
+}
+
+function halfNumber(n) {
+  var half = n / 2;
+  console.log("Half of " + n + " is " + half);
+  return half;
+}
+
+function percentOf(x, y) {
+  var percent = (x / y) * 100;
+  console.log(x + " is " + percent + "% of " + y);
+  return percent;
+}
+
+function areaOfCircle(r) {
+  var pi = 3.141592;
+  var area = pi * (Math.pow(r, 2));
+  area = Math.round(area * 100) / 100;
+  console.log("The area for a circle with radius of " + r + " is " + area);
+  return area;
+}
+
+// TODO
+function messyCalc(num) {
+  // Take half of the number and store the result.
+  var num1 = num / 2;
+  // Square the result of #1 and store that result.
+  var num2 = num1 * num1;
+  // Calculate the area of a circle with the result of #2 as the radius.
+  var num3 = Math.pi * (Math.pow(num2, 2));
+  // Calculate what percentage that area is of the squared result (#3).
+  
+}

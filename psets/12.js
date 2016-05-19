@@ -12,3 +12,30 @@ Write a function named calculateSupply that:
 */
 
 // write your solution here...
+function calculateSupply(age, perDay) {
+  var maxAge = 89;
+  var lifetime = (maxAge - age) * 365 * perDay;
+
+  console.log("You will need " + lifetime + " to last you until the ripe old age of " + maxAge);
+}
+
+// calculateSupply(19, 3);
+// calculateSupply(40, 1);
+// calculateSupply(22, 2);
+
+var prompt = require('prompt');
+
+  prompt.start();
+
+  prompt.get(['yourAge', 'eatenPerDay'], function (err, result) {
+    // Code here
+    var currentAge = result.yourAge;
+    var perDay = result.eatenPerDay;
+
+    calculateSupply(currentAge, perDay);
+  });
+
+  function onErr(err) {
+    console.log(err);
+    return 1;
+  }

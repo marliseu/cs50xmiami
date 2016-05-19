@@ -12,3 +12,33 @@ Write a function named calculateAge that:
 */
 
 // write your solution here...
+function calculateAge(bir) {
+  var ages = [];
+  var cur = new Date().getFullYear();
+  var age = cur - bir;
+  ages.push(age);
+  age = age - 1;
+  ages.push(age);
+
+  console.log("They are either " + ages[1] + " or " + ages[0]);
+}
+
+// calculateAge(1993, 2016);
+// calculateAge(1990, 2016);
+// calculateAge(1956, 2016);
+
+var prompt = require('prompt');
+
+  prompt.start();
+
+  prompt.get(['birthYear'], function (err, result) {
+    // Code here
+    var birthYear = result.birthYear;
+
+    calculateAge(birthYear);
+  });
+
+  function onErr(err) {
+    console.log(err);
+    return 1;
+  }
